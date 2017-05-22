@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('HizmetMapper', '0001_initial'),
+        ('hizmet', '0001_initial'),
     ]
 
     operations = [
@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                 ('dogumGunu', models.DateField(blank=True, default=datetime.date.today, null=True)),
                 ('telefon', models.CharField(blank=True, max_length=12, null=True)),
                 ('fotograf', models.ImageField(blank=True, null=True, upload_to='kullanicilar')),
-                ('hizmetler', models.ManyToManyField(related_name='hizmetler', to='HizmetMapper.Hizmet')),
+                ('hizmetler', models.ManyToManyField(related_name='hizmetler', to='hizmet.Hizmet')),
                 ('kullanici', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='is_arayan', to=settings.AUTH_USER_MODEL)),
             ],
             options={

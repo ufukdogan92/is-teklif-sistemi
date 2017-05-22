@@ -14,7 +14,7 @@
 * pip install -r is-teklif-sistemi/req.txt
 
 
-### DJANFO PROJECT INSTALLATION ###
+### DJANGO PROJECT INSTALLATION ###
 
 * cd is-teklif-sistemi
 

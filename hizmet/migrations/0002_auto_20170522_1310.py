@@ -9,7 +9,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('HizmetMapper', '0001_initial'),
+        ('hizmet', '0001_initial'),
     ]
 
     operations = [
@@ -34,6 +34,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='hizmetdescription',
             name='hizmet',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='HizmetMapper.Hizmet'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='hizmet.Hizmet'),
         ),
     ]

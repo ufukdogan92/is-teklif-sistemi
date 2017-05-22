@@ -1,9 +1,8 @@
 #! -*- coding:utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User 
-import datetime
-from django.db.models.signals import post_save
-from HizmetMapper.models import Hizmet
+import datetime 
+from hizmet.models import Hizmet
 
 
 class IsVeren(models.Model):
