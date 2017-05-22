@@ -23,7 +23,7 @@ class Ilan(models.Model):
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.kullanici.kullanici.username + " " + self.ilan_basligi
+        return self.ilan_basligi
 
     class Meta:
         verbose_name ="İlan"
