@@ -6,7 +6,7 @@ from hizmet.models import Hizmet
 
 
 class IsVeren(models.Model):
-    kullanici = models.ForeignKey(User,related_name="is_veren")
+    kullanici = models.OneToOneField(User,related_name="is_veren")
     cinsiyetSecenekleri = (
         ('E', 'Erkek'),
         ('K', 'Kadın'),
@@ -24,7 +24,7 @@ class IsVeren(models.Model):
         verbose_name_plural="İş Veren Profilleri"
 
 class IsArayan(models.Model):
-    kullanici = models.ForeignKey(User,related_name="is_arayan")
+    kullanici = models.OneToOneField(User,related_name="is_arayan")
     hizmetler = models.ManyToManyField(Hizmet,related_name="hizmetler")
     CinsiyetSecenekleri = (
         ('E', 'Erkek'),

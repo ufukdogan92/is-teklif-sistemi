@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'adres',
     'ilan',
     'teklif',
+    'odeme',
 ]
 
 MIDDLEWARE = [
