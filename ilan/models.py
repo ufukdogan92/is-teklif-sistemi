@@ -8,13 +8,21 @@ class Ilan(models.Model):
     adres = models.ForeignKey(Adres,blank=True,null=True,related_name="is_veren_adresi")
     
     ilan_basligi = models.CharField(max_length=40)
-    sure = models.IntegerField()
     butceTipleri = (
         ('TL', 'Türk Lirası'),
         ('DLR', 'DOLAR'),
         ('EUR', 'EURO'),
     )
+    sureUzunluklari = (
+        ('S', 'Saat'),
+        ('G', 'Gün'),
+        ('A', 'Ay'),
+        ('H', 'Hafta'),
+        ('Y', 'Yıl'),
+    )
 
+    sureUzunlugu = models.CharField(max_length=3, choices=sureUzunluklari,default="G")
+    sure = models.IntegerField()
     butceTipi = models.CharField(max_length=3, choices=butceTipleri,default="TL")
     butce = models.IntegerField()
     yayin_tarihi = models.DateTimeField(auto_now_add=True)
