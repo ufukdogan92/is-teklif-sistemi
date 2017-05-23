@@ -24,6 +24,8 @@ class HizmetDescription(models.Model):
     )
     calismaTipi = models.CharField(max_length=1, choices=calismaTipleri,blank=True, null=True)
 
+    def hizmetSec(kategoriID):
+        return HizmetDescription.objects.get(pk=kategoriID)
     
     def __str__(self):
         return self.hizmetBasligi

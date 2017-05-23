@@ -18,6 +18,9 @@ class IsVeren(models.Model):
     
     def __str__(self):
         return self.kullanici.username
+    
+    def getIsveren(kullaniciID):
+        return IsVeren.objects.get(pk=kullaniciID)
 
     class Meta:
         verbose_name ="İş Veren Profili"
@@ -40,7 +43,9 @@ class IsArayan(models.Model):
     telefon = models.CharField(max_length=12,blank=True, null=True)
     fotograf = models.ImageField(blank=True, null=True,upload_to="kullanicilar")
 
-    
+    def getIsArayan(kullaniciID):
+        return IsArayan.objects.get(pk=kullaniciID)
+
     def __str__(self):
         return self.kullanici.username
 

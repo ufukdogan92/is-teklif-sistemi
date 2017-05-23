@@ -21,3 +21,8 @@ class Adres(models.Model):
     class Meta:
         verbose_name ="İş Veren Adresi"
         verbose_name_plural="İş Veren Adresleri"
+
+    def adresSec(adresID):
+        return Adres.objects.get(pk=adresID)
+
+    

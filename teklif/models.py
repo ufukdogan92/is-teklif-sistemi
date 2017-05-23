@@ -1,6 +1,7 @@
 from django.db import models
 from ilan.models import Ilan
 from kullanici.models import IsArayan
+from register.models import Register
 
 class Teklif(models.Model):
     ilan = models.ForeignKey(Ilan,blank=True,null=True,related_name="odeme_ilanı")
@@ -18,7 +19,13 @@ class Teklif(models.Model):
     class Meta:
         verbose_name ="Teklifler"
         verbose_name_plural="Teklif"
-
+    
+    def save(self, *args, **kwargs):
+        from register.models import Register
+        self.ilan = Register.teklifVermeBaslat(self.ilan.pk)
+        self.teklif_veren = Register.getIsArayan(self.teklif_veren.pk)
+        super(Teklif, self).save(*args, **kwargs)
+    
 
 class TeklifOnay(models.Model):
     teklif = models.OneToOneField(Teklif,related_name="teklif_onay")
